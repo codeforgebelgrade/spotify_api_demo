@@ -15,7 +15,7 @@ public class ArtistInfoController {
 
     @GetMapping
     @RequestMapping(method = RequestMethod.GET)
-    public String getArtistInfo(@RequestParam(value="artistname", required = true) String artistName,
+    public CompletableFuture<String> getArtistInfo(@RequestParam(value="artistname", required = true) String artistName,
                                 @RequestHeader(value = "Authorization", required = true) String auth) throws InterruptedException, ExecutionException, TimeoutException {
 
         CompletableFuture<String> responseFuture = CompletableFuture.supplyAsync(() -> {
@@ -29,7 +29,7 @@ public class ArtistInfoController {
             return response;
         });
 
-        return responseFuture.get(5, TimeUnit.SECONDS);
+        return responseFuture;
     }
 
 
