@@ -6,11 +6,9 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
-import org.junit.platform.commons.annotation.Testable;
 
 import java.io.IOException;
 
-@Testable
 public class SpotifyAPIRequestHandler {
 
     public static String executeHttpRequest(String artistName, String auth) throws IOException {
