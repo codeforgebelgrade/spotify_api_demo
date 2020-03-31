@@ -20,7 +20,7 @@ public class ArtistInfoController {
     @Autowired
     private MyConfiguration properties;
 
-    @GetMapping("/getConfigFromProperty")
+    @GetMapping("/consul")
     public String getConfigFromProperty() {
         return properties.getProp();
     }
