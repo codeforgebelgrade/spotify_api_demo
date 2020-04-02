@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties("myconfig")
 public class MyConfiguration {
     private String prop;
-
+    private boolean feature;
 
     public String getProp() {
         return prop;
@@ -17,5 +17,13 @@ public class MyConfiguration {
 
     public void setProp(String prop) {
         this.prop = prop;
+    }
+
+    public boolean getFeature() {
+        return feature;
+    }
+
+    public void setFeature(boolean flag) {
+        this.feature = flag;
     }
 }
