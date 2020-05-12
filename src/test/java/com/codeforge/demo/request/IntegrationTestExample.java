@@ -23,7 +23,7 @@ public class IntegrationTestExample {
     private TestRestTemplate testRestTemplate;
 
     @Test
-    public void getSampleRequestTest() {
+    public void getSampleResponseTest() {
 
         HttpHeaders headers = new HttpHeaders();
         // TODO: Bearer tokens should be handled differently during test execution
