@@ -25,8 +25,8 @@ public class IntegrationTestExample {
     @Test
     public void getArtistInfo() {
 
-        // TODO: Bearer tokens should be handled differently during test execution
         HttpHeaders headers = new HttpHeaders();
+        // TODO: Bearer tokens should be handled differently during test execution
         headers.setBearerAuth("BQBq-yVpo3cwiNYGp3jhagj2B0HyVlTQks2LPiJp8tr_pIar3o66jUvDavmurlFOaE44R3LNExDtTfKCDwAE0mNy5BbSzHU-p4wAwlEZkLXrt-TTPr6Jay9W22Mgg-10Q7blPN-1hzVALh_WSqbEe5Js7nnTLXV5KFTQUcA19yfu");
         HttpEntity request = new HttpEntity(headers);
 
