@@ -32,6 +32,8 @@ public class IntegrationTestExample {
 
         ResponseEntity<String> response = this.testRestTemplate.exchange("http://localhost:" + port + "/artist-info?artistname=Behemoth",
                 HttpMethod.GET, request, String.class);
+
+        // response code will be OK, despite sending the wrong token
         Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
     }
 }
