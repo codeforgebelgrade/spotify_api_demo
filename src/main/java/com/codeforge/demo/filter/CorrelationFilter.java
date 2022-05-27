@@ -1,4 +1,5 @@
 package com.codeforge.demo.filter;
+import org.slf4j.MDC;
 import org.springframework.http.client.support.HttpRequestWrapper;
 import org.springframework.stereotype.Component;
 import javax.servlet.*;
@@ -25,7 +26,7 @@ public class CorrelationFilter implements Filter {
 
     private void doHttpFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
 
-        CustomRequestWrapper servletRequestWrapper = new CustomRequestWrapper(request);
+        /*CustomRequestWrapper servletRequestWrapper = new CustomRequestWrapper(request);
         String requestId = request.getHeader(REQUEST_ID_HEADER);
         // verifies the correlation id was set
         if (requestId == null || requestId.isEmpty()) {
@@ -34,7 +35,8 @@ public class CorrelationFilter implements Filter {
             servletRequestWrapper.addHeader(REQUEST_ID_HEADER, requestId);
         }
 
-        response.addHeader(REQUEST_ID_HEADER, requestId);
-        chain.doFilter(servletRequestWrapper, response);
+        MDC.put("cid", requestId);
+        //response.addHeader(REQUEST_ID_HEADER, requestId);*/
+        chain.doFilter(request, response);
     }
 }
