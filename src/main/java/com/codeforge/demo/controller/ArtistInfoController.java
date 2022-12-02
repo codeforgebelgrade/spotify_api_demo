@@ -1,6 +1,7 @@
 package com.codeforge.demo.controller;
 
 import com.codeforge.demo.request.SpotifyAPIRequestHandler;
+import jdk.jfr.ContentType;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -11,7 +12,7 @@ import java.util.concurrent.CompletableFuture;
 public class ArtistInfoController {
 
     @GetMapping
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET, produces = "application/json")
     public CompletableFuture<String> getArtistInfo(@RequestParam(value="artistname") String artistName,
                                 @RequestHeader(value = "Authorization") String auth) {
 
