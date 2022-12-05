@@ -21,6 +21,7 @@ public class ArtistInfoController {
             String response = null;
             try {
                 // some coment here
+                // some additional comments
                 response = SpotifyAPIRequestHandler.executeHttpRequest(artistName, auth);
             } catch (IOException e) {
                 e.printStackTrace();
